@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Ops";
+}
+
+<h2>Simple Oeration Executions</h2>
+
+<div class="flex border boder-danger">
+    <h1 id="hoverme">Hover me</h1>
+    <h1 id="clickme">Click me</h1>
+</div>
+
+<script src="~/Scripts/jquery/jquery-3.7.1.min.js"></script>
+<script>
+    $().ready(() => {
+
+        function hoverEvents() {
+            $('#hoverme').on('dblclick', function () {
+                return $('#hoverme').remove()
+            });
+        }
+
+        function clickEve() {
+            $('#clickme').on('click', function () {
+                console.log('You clicked me!');
+            });
+        }
+
+
+        clickEve();
+        hoverEvents();
+
+
+
+
+
+    });
+</script>
+

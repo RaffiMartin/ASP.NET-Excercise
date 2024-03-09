@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "StudentRegistry";
+}
+
+<h2>StudentRegistry</h2>
+
+<head>
+    <style>
+        form > div {
+            margin: 0.5rem 0 0.5rem 0;
+        }
+
+        span input {
+            margin: 0 0.5rem 0 0.2rem;
+        }
+    </style>
+</head>
+
+<div>
+    <form id="myform">
+        <div><label for="fname">First Name: </label><input type="text" id="fname" placeholder="Enter First Name" /></div>
+        <div><label for="lname">Lastname: </label><input type="password" id="lname" placeholder="Enter Last Name" /></div>
+
+        <span>
+            <label for="male">Male: </label><input type="radio" id="male" value="0" name="radio" />
+            <label for="fmale">Female: </label><input type="radio" id="fmale" value="1" name="radio" />
+            <label for="n-binary">Non-binary: </label><input type="radio" id="n-binary" value="2" name="radio" />
+        </span>
+
+
+        <div><input type="button" id="sbmt" value="Submit" /></div>
+    </form>
+</div>
+<script src="~/Scripts/jquery/jquery-3.7.1.min.js"></script>
+<script src="~/Scripts/practice/StudentRegistry.js"></script>

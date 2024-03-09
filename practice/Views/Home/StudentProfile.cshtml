@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "StudentProfile";
+}
+
+<h2>StudentProfile</h2>
+
+<br />
+
+Lastname:
+<input type="text" id="lname" />
+<br />
+<br />
+Firstname:
+<input type="text" id="fname" />
+<br />
+<br />
+<select id="sel_gender">
+    <option selected disabled>Select Gender</option>
+    <option value="0">Female</option>
+    <option value="1">Male</option>
+    <option value="2">LGBTQ+</option>
+</select>
+
+<br />
+
+Course <select id="sel_course">
+    <option selected disabled>Select Course</option>
+    <option value="0">BSIT</option>
+    <option value="1">BSED</option>
+    <option value="2">BSEE</option>
+</select>
+<br />
+Gender:
+<input type="radio" id="female" name="gender" value="0">
+Female
+<br />
+<br>
+<input type="radio" id="Male" name="gender" value="1">
+Male
+<br />
+<br>
+<input type="radio" id="LGBTQ" name="gender" value="3">
+LGBTQ
+<br />
+<br />
+
+<input type="button" id="btnclck" value="Save" />
+
+@section scripts {
+    <script src="~/Scripts/jquery/jquery-3.7.1.min.js"></script>
+    <script src="~/Scripts/practice/StudentProfile.js"></script>
+}

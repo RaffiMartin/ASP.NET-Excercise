@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "StudentAccountingSystem";
+}
+
+<head>
+    <style>
+        /* css styles */
+
+        form div {
+            margin-bottom: 0.5rem;
+        }
+
+        form div input {
+            width: 100%;
+            height:25%;
+        }
+
+        form .year-wrapper {
+            margin-top: 0.5rem;
+        }
+
+        form div label {
+            margin-right: 0.5rem;
+        }
+
+        span {
+            display: flex;
+            align-items:center;
+            margin-bottom: 1rem;
+        }
+
+        .wrapper {
+            display:flex;
+        }
+
+        span input {
+            margin: 0.5rem 0.5rem 0.5rem 0.2rem;
+        }
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <h2>Student Accounting System</h2>
+    <div class="wrapper">
+        <div class="w-100">
+            <form>
+                <!--Personal Information-->
+                <div><h6>I.D. Number: </h6><input type="number" id="id-no" placeholder="xxx-xxx-xxx" /></div>
+                <div><h6>Last Name: </h6><input type="text" id="lname" placeholder="Dela Cruz" /></div>
+                <div><h6>First Name: </h6><input type="text" id="fname" placeholder="Juan" /></div>
+
+                <!--Sex Information-->
+                <span>
+                    <label>Male </label><input type="radio" id="male" name="radio" value="0" />
+                    <label>Female </label><input type="radio" id="fmale" name="radio" value="1" />
+                    <label>None-Binary </label><input type="radio" id="nonbinary" name="radio" value="2" />
+                </span>
+
+                <!--University Information-->
+                <div><h6>Course Code </h6><input type="text" id="crs-code" placeholder="CS50" /></div>
+                <div><h6>Course </h6><input type="text" id="crs" placeholder="Bachelor of Science in Computer Science" /></div>
+                <div class="year-wrapper">
+                    <select id="year-level">
+                        <option selected disabled>Select Year Level</option>
+                        <option value="0">First Year</option>
+                        <option value="1">Second Year</option>
+                        <option value="2">Third Year</option>
+                        <option value="3">Fourth Year</option>
+                    </select>
+                </div>
+                <div><h6>Subject/s: </h6><input type="number" id="subs" placeholder="Number of Subjects" /></div>
+
+                <div><input type="button" id="btn" value="Submit" /></div>
+            </form>
+        </div>
+    </div>
+
+    @section scripts {
+        <script src="~/Scripts/jquery/jquery-3.7.1.min.js"></script>
+        <script src="~/Scripts/practice/StudentAccount.js"></script>
+    }
+</body>
+
+

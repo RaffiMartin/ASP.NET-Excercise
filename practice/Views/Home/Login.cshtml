@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+<head>
+    <style>
+        form div {
+            margin-bottom: 0.5rem;
+        }
+
+        #radio-wrapper {
+            display: flex;
+        }
+
+            #radio-wrapper > div {
+                margin-right: 0.5rem;
+            }
+
+                #radio-wrapper > div > label {
+                    margin-right: 0.2rem;
+                }
+    </style>
+</head>
+<div>
+    <form method="get">
+        @* intended for user and pass fields *@
+        <div><h6>Username: </h6><input type="text" id="user" name="user" placeholder="Username" required /></div>
+        <div><h6>Password: </h6><input type="password" id="pass" name="pass" placeholder="Password" required /></div>
+
+        @* intended for gender selection *@
+        <div id="radio-wrapper">
+            <div><label for="male">Male </label><input type="radio" id="male" name="gender" value="0" /></div>
+            <div><label for="female">Female </label><input type="radio" id="female" name="gender" value="1" /></div>
+            <div><label for="nonbinary">Non-binary </label><input type="radio" id="nonbinary" name="gender" value="2" /></div>
+        </div>
+        <div><input type="button" id="sbmt" value="Sign Up"/></div>
+    </form>
+</div>
+
+@section scripts {
+    <script src="~/Scripts/jquery/jquery-3.7.1.min.js"></script>
+    <script src="~/Scripts/practice/login.js"></script>
+}

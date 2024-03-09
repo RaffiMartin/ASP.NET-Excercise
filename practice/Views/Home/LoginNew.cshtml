@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "LoginNew";
+}
+
+<head>
+    <style>
+        form div {
+            margin-bottom: 0.5rem;
+        }
+
+        span label {
+            padding: 0 0.3rem 0 0.3rem;
+        }
+    </style>
+</head>
+<h2>LoginNew</h2>
+
+
+<div>
+    <form method="get">
+        <div>Username: <input type="text" placeholder="Username" id="user" /></div>
+        <div>Password: <input type="password" placeholder="Password" id="pass" /></div>
+
+        <span>
+            <label for="male">Male </label><input type="radio" id="male" value="0" name="gender" />
+            <label for="female">Female </label><input type="radio" id="female" value="1" name="gender" />
+            <label for="lgbt">Non-binary</label><input type="radio" id="lgbt" value="2" name="gender" />
+        </span>
+
+        <div><input type="button" id="sbmt" value="Log In" /></div>
+
+
+    </form>
+</div>
+
+@section scripts {
+    <script src="~/Scripts/jquery/jquery-3.7.1.min.js"></script>
+    <script src="~/Scripts/practice/loginnew.js"></script>
+}

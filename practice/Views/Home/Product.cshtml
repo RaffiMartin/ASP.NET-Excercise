@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Product";
+}
+
+<head>
+    <style>
+        table th {
+            width: 20%;
+        }
+    </style>
+</head>
+<h2>Product</h2>
+
+<select class="prodList">
+    <option>TV</option>
+    <option>VCR</option>
+    <option>REMOTE CONTROLLER</option>
+    <option>CD PLAYER</option>
+    <option>TAPE RECORDER</option>
+</select>
+<br />
+<br />
+<input type="number" placeholder="Enter Product Quantity" id="qty" />
+<br />
+<br />
+<input type="button" value="Add to cart" id="addToCart" />
+<br />
+<br />
+<table class="prodTable">
+    <thead>
+        <tr>
+            <th>QTY</th>
+            <th>DESCRIPTION</th>
+            <th>UNIT PRICE</th>
+            <th>TOTAL PRICE</th>
+        </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+</table>
+<br />
+<br />
+<div id="receipt"></div>
+<br />
+<br />
+<input type="button" value="Check Price" id="checkPrice" />
+<input type="button" value="Check Out" id="checkOut" />
+<br />
+<br />
+<div id="subtotal"></div>
+<br />
+<br />
+
+@section scripts{
+    <script src="~/Scripts/jquery/jquery-3.7.1.min.js"></script>
+    <script src="~/Scripts/practice/product.js"></script>
+}

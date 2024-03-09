@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+}
+
+<h1>Simple Calculator Program</h1>
+
+Enter your Input:
+<input type="number" id="n1" name="n1" />
+<br />
+<br />
+Enter your Input:
+<input type="number" id="n2" name="n2" />
+<br />
+<br />
+<select id="dropdown">
+    <option value="add">Addition</option>
+    <option value="sub">Subtraction</option>
+    <option value="mult">Multiplication</option>
+    <option value="divide">Division</option>
+    <option value="mod">Modulo</option>
+</select>
+<br />
+<br />
+<input type="button" id="btnSubmit" value="Submit" />
+
+<script src="~/Scripts/jquery/jquery-3.7.1.min.js"></script>
+@*<script src="~/Scripts/practice/calculator.js"></script>*@
+
+<script>
+    $(document).ready(function () {
+        $('#btnSubmit').click(function () {
+            // acquire the values from input fields
+            let num1 = parseInt($('#n1').val());
+            let num2 = parseInt($('#n2').val());
+
+            // acquire operation type from dropdown
+            let operationType = $('#dropdown').val();
+
+            // initialize result for later use
+            let result = 0;
+
+            // user triple = to compare strictly the data type and value.
+            if (operationType === 'add') {
+                result = num1 + num2;
+            } else if (operationType === 'sub') {
+                result = num1 - num2;
+            } else if (operationType === 'mult') {
+                result = num1 * num2;
+            } else if (operationType === 'divide') {
+                result = num1 / num2;
+            } else {
+                result = num1 % num2;   // default to modulo when nothing matched
+            }
+
+            // rerturn the result
+            return alert(result);
+
+        });
+    });
+</script>
+
+@*much effecient way*@
+<script>
+    $(() => {
+        $('#btnSubmit').on('click', () => {
+            // acquire the values from user input
+            let num1 = parseInt($('#n1').val());
+            let num2 = parseInt($('#n2').val());
+            // acquire operation type from dropdown
+            let operationType = $('#dropdown').val();
+            // initialize the result for later use
+            let result = 0;
+
+            // switch according to the operation type untill matches or defaults to nothing
+            switch (operationType) {
+                case 'add':
+                    result = num1 + num2;
+                    break;
+                case 'sub':
+                    result = num1 - num2;
+                    break;
+                case 'mult':
+                    result = num1 * num2;
+                    break;
+                case 'divide':
+                    result = num1 / num2;
+                    break;
+                case 'mod':
+                    result = num1 % num2;
+                    break;
+                default:
+                    break;
+            }
+            // return the result as alert or pop-up in browser
+            return alert(result);
+        });
+    });
+</script>
