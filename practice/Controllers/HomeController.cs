@@ -132,12 +132,31 @@ namespace practice.Controllers
 
         public ActionResult StudentAccountingData()
         {
-            var data = new ArrayList();
+            var data = new List<object>();
 
-            return Json(data, JsonRequestBehavior.AllowGet);
+            string[] dataArray = { Request["courseCode"], Request["course"],
+                Request["tuition"], Request["registration"], Request["misc"],
+                Request["lab"], Request["units"], Request["terms"]};
+
+            data.Add(new
+            {
+                courseCode =dataArray[0],
+                course = dataArray[1],
+                tuition = dataArray[2],
+                registration = dataArray[3],
+                misc = dataArray[4],
+                lab = dataArray[5],
+                units = dataArray[6],
+                terms = dataArray[7]
+            });
+
+            data.Add(new
+            {
+                fullname = Request["name"],
+                schoolId = Request["schoolId"]
+            });
+
+            return Json(data);
         }
-
-
-    
     }
 }

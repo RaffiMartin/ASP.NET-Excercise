@@ -38,6 +38,17 @@
             margin: 0.5rem 0.5rem 0.5rem 0.2rem;
         }
 
+        table th, table td {
+            padding: 1rem;
+        }
+
+        #payment-wrapper {
+            display: flex;
+        }
+
+        #payment-wrapper div {
+            margin: 0.5rem;
+        }
 
 
 
@@ -63,7 +74,24 @@
 
                 <!--University Information-->
                 <div><h6>Course Code </h6><input type="text" id="crs-code" placeholder="CS50" /></div>
-                <div><h6>Course </h6><input type="text" id="crs" placeholder="Bachelor of Science in Computer Science" /></div>
+
+                <!-- <div><h6>Course </h6><input type="text" id="crs" placeholder="Bachelor of Science in Computer Science" /></div> -->
+
+
+                <div class="year-wrapper">
+                    <select id="crs">
+                        <option selected disabled>Select Course</option>
+                        <option value="0">C1</option>
+                        <option value="1">C2</option>
+                        <option value="2">C3</option>
+                        <option value="3">C4</option>
+                        <option value="4">C5</option>
+                        <option value="5">C6</option>
+                        <option value="6">C7</option>
+                        <option value="7">C8</option>
+                    </select>
+                </div>
+
                 <div class="year-wrapper">
                     <select id="year-level">
                         <option selected disabled>Select Year Level</option>
@@ -73,12 +101,57 @@
                         <option value="3">Fourth Year</option>
                     </select>
                 </div>
+
                 <div><h6>Subject/s: </h6><input type="number" id="subs" placeholder="Number of Subjects" /></div>
 
                 <div><input type="button" id="btn" value="Submit" /></div>
             </form>
         </div>
     </div>
+
+    <div class="mt-5 md-5" id="student-info"></div>
+
+    <div class="mt-5 border border-1" id="table-wrapper">
+        <table id="my-table">
+            <tr id="code">
+                <th>CODE</th>
+
+            </tr>
+            <tr id="crsData">
+                <th>COURSE</th>
+
+            </tr>
+            <tr id="tuition">
+                <th>TUITION</th>
+
+            </tr>
+            <tr id="reg">
+                <th>REGISTRATION</th>
+
+            </tr>
+            <tr id="msc">
+                <th>MISC</th>
+
+            </tr>
+            <tr id="lab">
+                <th>LAB FEE</th>
+
+            </tr>
+        </table>
+    </div>
+
+    <div class="mt-5 md-5">
+        <div id="total"></div>
+
+        <div id="payment-wrapper">
+            <div><input type="button" id="cash" value="Cash"/></div>
+            <div><input type="button" id="check" value="Check"/></div>
+            <div><input type="button" id="credit" value="Credit"/></div>
+        </div>
+
+    </div>
+    
+
 
     @section scripts {
         <script src="~/Scripts/jquery/jquery-3.7.1.min.js"></script>
